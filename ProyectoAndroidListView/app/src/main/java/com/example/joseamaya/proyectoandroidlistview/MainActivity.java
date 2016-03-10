@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        TextView tv3=(TextView)findViewById(R.id.text);
-        tv3.setText("rama de daniel en uso");
+        
     }
 
     @Override
