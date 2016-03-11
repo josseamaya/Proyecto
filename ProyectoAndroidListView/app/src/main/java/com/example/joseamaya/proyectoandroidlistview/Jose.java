@@ -24,50 +24,17 @@ import static com.example.joseamaya.proyectoandroidlistview.R.id.textViewJoseNom
 
 
 public class Jose extends AppCompatActivity {
-    private 
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jose);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        mContext=this;
+        mContext = this;
 
-    }
-    public void kivaLlenarInformacion(){
         String url = "http://api.kivaws.org/v1/loans/newest.json";
-    public void kivaLlenarList(){
-        String url = "http://api.kivaws.org/v1/loans/newest.json";
-
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        String loans = null;
-                        try {
-                            loans = response.getString("loans");
-                            JSONArray arregloPersonas = new JSONArray(loans);
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-
-                    }
-                });
-        MySingleton.getInstance(MainActivity.mContext).addToRequestQueue(jsObjRequest);
     }
-
-    }
-
+    
 
 }
