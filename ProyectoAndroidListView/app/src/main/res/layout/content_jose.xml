@@ -22,7 +22,11 @@
         <com.android.volley.toolbox.NetworkImageView
             android:layout_width="104dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView" />
+            android:id="@+id/networkImageViewJose" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></FrameLayout>
 
         <LinearLayout
             android:orientation="vertical"
