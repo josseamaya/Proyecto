@@ -55,12 +55,17 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="width" value="1370" />
     <option name="height" value="744" />
 =======
     <option name="width" value="1386" />
     <option name="height" value="788" />
 >>>>>>> origin/master
+=======
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
+>>>>>>> RamaEspaña
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -74,9 +79,12 @@
   </component>
   <component name="ProjectView">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <navigator currentView="AndroidView" proportions="" version="1">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> RamaEspaña
     <navigator currentView="ProjectPane" proportions="" version="1">
 =======
 <<<<<<< HEAD
@@ -85,7 +93,10 @@
     <navigator currentView="AndroidView" proportions="" version="1">
 >>>>>>> RamaDaniel
 >>>>>>> master
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> RamaEspaña
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -99,6 +110,7 @@
 <<<<<<< HEAD
     <panes>
       <pane id="Scratches" />
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope" />
@@ -107,6 +119,8 @@
 <<<<<<< HEAD
     <panes>
       <pane id="Scratches" />
+=======
+>>>>>>> RamaEspaña
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -120,14 +134,20 @@
       <pane id="ProjectPane" />
       <pane id="AndroidView">
 >>>>>>> master
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> RamaEspaña
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Proyecto" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> RamaEspaña
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -140,20 +160,28 @@
               <option name="myItemId" value="Proyecto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
 =======
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> RamaEspaña
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Proyecto" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> origin/master
+=======
+>>>>>>> master
+>>>>>>> RamaEspaña
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
 <<<<<<< HEAD
     </panes>
   </component>
@@ -165,6 +193,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> RamaEspaña
       <pane id="PackagesPane" />
     </panes>
 =======
@@ -302,6 +332,7 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
@@ -334,6 +365,8 @@
     </layout>
   </component>
 =======
+=======
+>>>>>>> RamaEspaña
     <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
     <editor active="false" />
     <layout>
