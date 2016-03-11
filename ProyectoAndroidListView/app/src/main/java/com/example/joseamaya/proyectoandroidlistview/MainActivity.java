@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < usuarios.length(); i++) {
                                 dataSourse.add(usuarios.getJSONObject(i));
                             }
+
                             //celdaComplejaAdapter adapter = new celdaComplejaAdapter(context, 0, dataSourse);
                            // ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
                             //NECESITO EL celaComplejaAdapter.java y el celda_compleja.xml CHICOS!!!!
