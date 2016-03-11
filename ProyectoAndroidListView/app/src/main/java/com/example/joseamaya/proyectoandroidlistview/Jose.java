@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -33,6 +32,7 @@ public class Jose extends AppCompatActivity {
         setContentView(R.layout.activity_jose);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         String url = "https://api.myjson.com/bins/4flfz";
         mContext=this;
@@ -118,6 +118,7 @@ public class Jose extends AppCompatActivity {
             return;
         }
         startActivity(callIntent);
+
     }
     public void onClickJoseMensaje (View v){
         Intent smsIntent = new Intent(Intent.ACTION_VIEW);
