@@ -33,13 +33,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mContext=this;
+        String url="https://api.myjson.com/bins/4flfz";
+        getUsuarios(url);
 
 
     }
-    public void getUsuarios (){
+    public void getUsuarios (String url){
         final Context context=this;
+
         JsonObjectRequest jor= new JsonObjectRequest(
-                "https://api.myjson.com/bins/4flfz",
+                url,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -49,12 +52,15 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < usuarios.length(); i++) {
                                 dataSourse.add(usuarios.getJSONObject(i));
                             }
+                            TextView tvprueba=(TextView)findViewById(R.id.textViewPrueba);
+                            tvprueba.setText(usuarios.toString());
 
                             //celdaComplejaAdapter adapter = new celdaComplejaAdapter(context, 0, dataSourse);
                            // ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
                             //NECESITO EL celaComplejaAdapter.java y el celda_compleja.xml CHICOS!!!!
                         } catch (JSONException e) {
                             e.printStackTrace();
+
                         }
                     }
                 },
@@ -62,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         //algun mensaje de error
+
                     }
                 }
+
         );
 
         MySingleton.getInstance(mContext).addToRequestQueue(jor);
