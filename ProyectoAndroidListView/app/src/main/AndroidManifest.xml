@@ -21,8 +21,13 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".Jose"
             android:label="@string/title_activity_jose"
+=======
+            android:name=".carlos"
+            android:label="@string/title_activity_carlos"
+>>>>>>> origin/master
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
