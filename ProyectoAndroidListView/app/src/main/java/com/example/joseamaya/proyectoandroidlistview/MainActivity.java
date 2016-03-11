@@ -46,24 +46,26 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 cont = position;
-                if (position==0) // carlos
+                if (position == 0) // carlos
+                {
+                    Intent intent=new Intent(mContext,carlos.class);
+                    startActivity(intent);
+
+                }
+                if (position == 1)//daniel
                 {
 
                 }
-                if (position==1)//daniel
+                if (position == 2)//edgardo
                 {
 
                 }
-                if (position==2)//edgardo
+                if (position == 3)//jose
                 {
-
-                }
-                if (position==3)//jose
-                {
-                    Intent intent=new Intent (mContext,Jose.class);
+                    Intent intent = new Intent(mContext, Jose.class);
                     startActivity(intent);
                 }
-                if (position==4)//kevin
+                if (position == 4)//kevin
                 {
 
                 }
