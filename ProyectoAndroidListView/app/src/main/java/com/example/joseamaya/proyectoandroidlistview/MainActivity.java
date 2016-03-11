@@ -1,6 +1,7 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.GpsStatus;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static Context mContext;
+    Integer cont=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         mContext=this;
         String url="https://api.myjson.com/bins/4flfz";
         getUsuarios(url);
+
+        ListView lv2=(ListView) findViewById(R.id.listViewUsuarios);
+        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                cont = position;
+                if (position==0) // carlos
+                {
+
+                }
+                if (position==1)//daniel
+                {
+
+                }
+                if (position==2)//edgardo
+                {
+
+                }
+                if (position==3)//jose
+                {
+                    Intent intent=new Intent (mContext,Jose.class);
+                    startActivity(intent);
+                }
+                if (position==4)//kevin
+                {
+
+                }
+
+
+            }
+        });
 
 
     }
@@ -55,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
                             TextView tvprueba=(TextView)findViewById(R.id.textViewPrueba);
                             tvprueba.setText(usuarios.toString());
 
-                            //celdaComplejaAdapter adapter = new celdaComplejaAdapter(context, 0, dataSourse);
-                           // ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
-                            //NECESITO EL celaComplejaAdapter.java y el celda_compleja.xml CHICOS!!!!
+                            CeldaComplejaAdapter adapter = new CeldaComplejaAdapter(context, 0, dataSourse);
+                           ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
 

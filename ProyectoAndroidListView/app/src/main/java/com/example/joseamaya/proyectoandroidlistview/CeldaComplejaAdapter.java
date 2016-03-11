@@ -34,15 +34,16 @@ public class CeldaComplejaAdapter extends ArrayAdapter<JSONObject> {
             celda= layoutInflater.inflate(R.layout.celda_compleja,null);
         }
 
-        TextView nombre_usurio = (TextView) celda.findViewById(R.id.textViewNombreApellido);
-        TextView telefono_usuario=(TextView) celda.findViewById(R.id.textViewTelefono);
+        TextView nombre = (TextView) celda.findViewById(R.id.textViewNombreApellido);
+        TextView telefono=(TextView) celda.findViewById(R.id.textViewTelefono);
         NetworkImageView niv= (NetworkImageView)celda.findViewById(R.id.networkImageViewFoto);
 
         JSONObject elemento=this.getItem(position);
         try {
+
             String imagen=elemento.getString("imagen");
-            nombre_usurio.setText(elemento.getString("nombre")+elemento.getString("apellido"));
-            telefono_usuario.setText(elemento.getString("telefono"));
+            nombre.setText(elemento.getString("nombre")+" "+elemento.getString("apellido"));
+            telefono.setText(elemento.getString("telefono"));
             niv.setImageUrl("http://imgur.com/" +
                             imagen + ".jpg",
                     MySingleton.getInstance(MainActivity.mContext).getImageLoader());
