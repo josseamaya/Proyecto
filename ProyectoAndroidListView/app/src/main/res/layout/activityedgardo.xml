@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Edgardo José"
+                android:text="Nombres"
                 android:id="@+id/textViewNombre"
                 android:textSize="35dp"
                 android:textAlignment="center" />
@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="España David"
+                android:text="Apellidos"
                 android:id="@+id/textViewApellido"
                 android:textSize="25dp"
                 android:textAlignment="center" />
@@ -55,8 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textViewTelefono"
-            android:text="+50488136776" />
+            android:id="@+id/textViewTelefono" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,8 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textViewCorreo"
-            android:text="edgardo.espana@ujcv.edu.hn" />
+            android:id="@+id/textViewCorreo" />
     </LinearLayout>
 
     <LinearLayout
