@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mContext=this;
 
 
     }
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        MySingleton.getInstance(mContext).addToRequestQueue(jor);
     }
 
     @Override
