@@ -24,7 +24,7 @@ import static com.example.joseamaya.proyectoandroidlistview.R.id.textViewJoseNom
 
 
 public class Jose extends AppCompatActivity {
-    private static Context mContext;
+    private 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
