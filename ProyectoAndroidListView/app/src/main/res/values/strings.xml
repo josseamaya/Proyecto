@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ProyectoAndroidListView</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
+    <string name="title_activity_jose">Jose</string>
+=======
+    <string name="title_activity_carlos">carlos</string>
+>>>>>>> origin/master
 </resources>
