@@ -35,6 +35,6 @@ public class Jose extends AppCompatActivity {
 
         String url = "http://api.kivaws.org/v1/loans/newest.json";
     }
-    
+
 
 }
