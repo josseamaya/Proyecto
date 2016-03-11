@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/textViewApellido"
+                android:id="@+id/textViewJoseApellido"
                 android:textSize="20dp" />
 
             <TextView
@@ -92,12 +92,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Llamar"
-            android:id="@+id/buttonJoseLlamar" />
+            android:id="@+id/buttonJoseLlamar"
+            android:onClick="onClickJoseLlamar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mensaje"
-            android:id="@+id/buttonJoseSms" />
+            android:id="@+id/buttonJoseSms"
+            android:onClick="onClickJoseMensaje" />
     </LinearLayout>
 </LinearLayout>
