@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Nombres"
-                android:id="@+id/textViewNombre"
+                android:id="@+id/textViewEspañaNombre"
                 android:textSize="35dp"
                 android:textAlignment="center" />
 
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Apellidos"
-                android:id="@+id/textViewApellido"
+                android:id="@+id/textViewEspañaApellido"
                 android:textSize="25dp"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -49,13 +49,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Telefono:      "
-            android:id="@+id/textViewEtiquetaTelefono" />
+            android:id="@+id/textViewEtiquetaEspañaTelefono" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textViewTelefono" />
+            android:id="@+id/textViewEspañaTelefono" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,13 +68,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Correo:          "
-            android:id="@+id/textViewEtiquetaCorreo" />
+            android:id="@+id/textViewEtiquetaEspañaCorreo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textViewCorreo" />
+            android:id="@+id/textViewEspañaCorreo" />
     </LinearLayout>
 
     <LinearLayout
@@ -87,13 +87,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Llamar"
-            android:id="@+id/buttonLlamar" />
+            android:id="@+id/buttonEspañaLlamar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SMS"
-            android:id="@+id/buttonSms" />
+            android:id="@+id/buttonEspañaSms" />
     </LinearLayout>
 
 </LinearLayout>
