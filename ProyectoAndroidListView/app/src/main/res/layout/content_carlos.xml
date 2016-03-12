@@ -40,39 +40,40 @@
         android:layout_below="@+id/textViewCarlosNombres"
         android:layout_toEndOf="@+id/imageViewCarlos"
         android:textSize="20dp"
-        android:textStyle="normal"
-        android:textColor="#e11818"
+        android:textStyle="bold"
+        android:textColor="#1829e1"
         android:textAlignment="center" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textViewCarlosTelefono"
+        android:textAlignment="textEnd"
         android:layout_below="@+id/textViewCarlosApellidos"
-        android:layout_toEndOf="@+id/imageViewCarlos"
-        android:textAlignment="textEnd" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textViewCarlosCorreo"
-        android:layout_toEndOf="@+id/imageViewCarlos"
+        android:textAlignment="textEnd"
         android:layout_below="@+id/textViewCarlosTelefono"
-        android:textAlignment="textEnd" />
+        android:layout_alignEnd="@+id/textViewCarlosTelefono" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textViewCarlosFacebook"
+        android:textAlignment="textEnd"
         android:layout_below="@+id/textViewCarlosCorreo"
-        android:layout_toEndOf="@+id/imageViewCarlos"
-        android:textAlignment="textEnd" />
+        android:layout_alignEnd="@+id/textViewCarlosDesrcripcion" />
 
     <TextView
         android:layout_width="match_parent"
@@ -97,18 +98,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WhatsApp"
-        android:id="@+id/buttonCarlosWhatsAp"
+        android:text="SMS"
+        android:id="@+id/buttonCarlosSMS"
         android:layout_alignTop="@+id/buttonCarlosLlamar"
         android:layout_centerHorizontal="true"
-        android:onClick="onClickWhastAppCarlos" />
+        android:onClick="onClickSMSCarlos" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FaceBook"
         android:id="@+id/buttonCarlosFaceBook"
-        android:layout_alignBottom="@+id/buttonCarlosWhatsAp"
+        android:layout_alignBottom="@+id/buttonCarlosSMS"
         android:layout_alignParentEnd="true"
         android:onClick="onClickFaceBookCarlos" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextSMS"
+        android:text="SMS"
+        android:layout_above="@+id/buttonCarlosSMS"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

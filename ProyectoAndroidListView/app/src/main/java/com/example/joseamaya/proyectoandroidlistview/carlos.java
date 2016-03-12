@@ -1,6 +1,7 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOError;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class carlos extends AppCompatActivity {
@@ -85,14 +88,30 @@ public class carlos extends AppCompatActivity {
 
 
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.mContext,MainActivity.class);
+                Intent intent = new Intent(MainActivity.mContext, MainActivity.class);
                 startActivity(intent);
             }
         });
+    }
+    public void enviaSMS(String tel, String sms){
+        Uri uri = Uri.parse("smsto:"+tel);
+        Intent it = new Intent(Intent.ACTION_SENDTO, uri);
+        it.putExtra("sms_body", sms);
+        startActivity(it);
+    }
+
+    public void onClickSMSCarlos(View view){
+        TextView telefono=(TextView)findViewById(R.id.textViewCarlosTelefono);
+        String tel=telefono.getText().toString();
+        TextView mensaje=(TextView)findViewById(R.id.editTextSMS);
+        String msg=mensaje.getText().toString();
+        enviaSMS(tel,msg);
     }
 
 }
