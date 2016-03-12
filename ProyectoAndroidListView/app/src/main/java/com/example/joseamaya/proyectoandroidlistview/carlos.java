@@ -1,5 +1,6 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 
 public class carlos extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,16 +43,21 @@ public class carlos extends AppCompatActivity {
 
                             TextView nombre=(TextView)findViewById(R.id.textViewCarlosNombres);
                             nombre.setText(carlos.getString("nombre").toString());
+
                             TextView apellido=(TextView)findViewById(R.id.textViewCarlosApellidos);
                             apellido.setText(carlos.getString("apellido").toString());
-                            TextView descripcion=(TextView)findViewById(R.id.textViewCarlosDesrcripcion);
-                            descripcion.setText(carlos.getString("descripcion").toString());
+
                             TextView telefono=(TextView)findViewById(R.id.textViewCarlosTelefono);
-                            telefono.setText(carlos.getString("apellido").toString());
+                            telefono.setText(carlos.getString("telefono").toString());
+
                             TextView correo=(TextView)findViewById(R.id.textViewCarlosCorreo);
                             correo.setText(carlos.getString("email").toString());
+
                             TextView facebook=(TextView)findViewById(R.id.textViewCarlosFacebook);
                             facebook.setText(carlos.getString("facebook").toString());
+
+                            TextView descripcion=(TextView)findViewById(R.id.textViewCarlosDesrcripcion);
+                            descripcion.setText(carlos.getString("descripcion").toString());
 
                             NetworkImageView niv= (NetworkImageView)findViewById(R.id.imageViewCarlos);
                             String imagen=carlos.getString("imagen");
@@ -82,8 +89,8 @@ public class carlos extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent=new Intent(MainActivity.mContext,MainActivity.class);
+                startActivity(intent);
             }
         });
     }
