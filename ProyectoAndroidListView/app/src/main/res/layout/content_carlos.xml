@@ -90,10 +90,17 @@
         android:layout_height="wrap_content"
         android:text="Llamar"
         android:id="@+id/buttonCarlosLlamar"
-        android:layout_marginTop="68dp"
         android:onClick="onClickLlamarCarlos"
-        android:layout_below="@+id/imageViewCarlos"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold"
+        android:theme="@android:style/Animation"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="56dp"
+        android:textColor="#c91010"
+        android:shadowColor="#ebd0d0"
+        android:nestedScrollingEnabled="false"
+        android:background="#84dbe5"
+        style="@android:style/Animation.Toast" />
 
     <Button
         android:layout_width="wrap_content"
@@ -113,11 +120,4 @@
         android:layout_alignParentEnd="true"
         android:onClick="onClickFaceBookCarlos" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextSMS"
-        android:text="SMS"
-        android:layout_above="@+id/buttonCarlosSMS"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>

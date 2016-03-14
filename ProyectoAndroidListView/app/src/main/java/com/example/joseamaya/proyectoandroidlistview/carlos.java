@@ -90,20 +90,13 @@ public class carlos extends AppCompatActivity {
         MySingleton.getInstance(this).addToRequestQueue(responseCarlos);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.mContext, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
-    public void enviaSMS(String tel, String sms) {
+    public void enviaSMS(int tel) {
         Uri uri = Uri.parse("smsto:" + tel);
         Intent it = new Intent(Intent.ACTION_SENDTO, uri);
-        it.putExtra("sms_body", sms);
+        it.putExtra("sms_body","");
         startActivity(it);
     }
 
@@ -133,9 +126,9 @@ public class carlos extends AppCompatActivity {
     public void onClickSMSCarlos(View view){
         TextView telefono=(TextView)findViewById(R.id.textViewCarlosTelefono);
         String tel=telefono.getText().toString();
-        TextView mensaje=(TextView)findViewById(R.id.editTextSMS);
-        String msg=mensaje.getText().toString();
-        enviaSMS(tel,msg);
+        int tel1=Integer.parseInt(tel);
+        enviaSMS(tel1);
     }
+
 
 }
