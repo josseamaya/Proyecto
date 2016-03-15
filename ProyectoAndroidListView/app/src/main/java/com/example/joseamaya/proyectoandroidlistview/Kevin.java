@@ -1,8 +1,7 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
-import android.content.Intent;
-import android.location.GpsStatus;
+import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,15 +9,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -27,11 +24,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
+public class Kevin extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-    public static Context mContext;
-    Integer cont = 0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -40,73 +34,35 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_kevin);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mContext = this;
-        String url = "https://api.myjson.com/bins/4flfz";
-        getUsuarios(url);
+        final Context myContext = this;
 
-        ListView lv2 = (ListView) findViewById(R.id.listViewUsuarios);
-        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String urlJson = "https://api.myjson.com/bins/4flfz";
+        TextView nombre = (TextView) findViewById(R.id.txtNombre);
+        TextView apellido = (TextView) findViewById(R.id.txtApellido);
+        TextView tel = (TextView) findViewById(R.id.txtTel);
+        TextView correo = (TextView) findViewById(R.id.txtCorreo);
+        TextView face = (TextView) findViewById(R.id.txtFace);
+        TextView descripcion = (TextView) findViewById(R.id.txtDescripcion);
+        NetworkImageView myPic = (NetworkImageView) findViewById(R.id.NetImage);
 
-                cont = position;
-                if (position == 0) // carlos
-                {
-
-                }
-                if (position == 1)//daniel
-                {
-
-                }
-                if (position == 2)//edgardo
-                {
-
-                }
-                if (position == 3)//jose
-                {
-                    Intent intent = new Intent(mContext, Jose.class);
-                    startActivity(intent);
-                }
-                if (position == 4)//kevin
-                {
-                    Intent kavxIntent = new Intent(mContext, Kevin.class);
-                    startActivity(kavxIntent);
-                }
-
-
-            }
-        });
-
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-    }
-
-    public void getUsuarios(String url) {
-        final Context context = this;
-
-        JsonObjectRequest jor = new JsonObjectRequest(
-                url,
+        JsonObjectRequest myResponse = new JsonObjectRequest(
+                urlJson,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray usuarios = response.getJSONArray("usuarios");
-                            ArrayList<JSONObject> dataSourse = new ArrayList<>();
-                            for (int i = 0; i < usuarios.length(); i++) {
-                                dataSourse.add(usuarios.getJSONObject(i));
-                            }
-                            TextView tvprueba = (TextView) findViewById(R.id.textViewPrueba);
-                            tvprueba.setText(usuarios.toString());
-
-                            CeldaComplejaAdapter adapter = new CeldaComplejaAdapter(context, 0, dataSourse);
-                            ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
+                            JSONObject me = usuarios.getJSONObject(4);
+                            NetworkImageView myPic = (NetworkImageView) findViewById(R.id.NetImage);
+                            String imagenId = me.getString("imagen");
+                            myPic.setImageUrl("http://imgur.com/" +
+                                            imagenId + ".jpg",
+                                    MySingleton.getInstance(MainActivity.mContext).getImageLoader());
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -117,36 +73,15 @@ public class MainActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //algun mensaje de error
+                        Toast.makeText(myContext, "No se pudo realizar el Request!", Toast.LENGTH_LONG).show();
 
                     }
                 }
 
         );
-
-        MySingleton.getInstance(mContext).addToRequestQueue(jor);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -158,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
+                "Kevin Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.
@@ -177,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
+                "Kevin Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.
