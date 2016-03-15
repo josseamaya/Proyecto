@@ -111,7 +111,8 @@ public class Edgardo extends AppCompatActivity {
     }
 
     public void onClickWhatsappEdgardo(View v){
-        Uri uri=Uri.parse("SMSTo:"); //Falta agregar el telefono (duda)
+        Uri uri=Uri.parse("SMSTo:"); //Falta agregar el telefono (duda si hay que agregar el telefono directamente(con numeros Ej. 88136776)
+        //o con la variable LLamarEdgardoTelefono ya arratra el telefono// )
         Intent Whatsapp=new Intent(Intent.ACTION_SENDTO,uri);
         Whatsapp.putExtra("sms_body","");
         Whatsapp.setPackage("com.whatsapp");
