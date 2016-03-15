@@ -31,6 +31,10 @@
             android:name=".carlos"
             android:label="@string/title_activity_jose"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Daniel"
+            android:label="@string/title_activity_daniel"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
