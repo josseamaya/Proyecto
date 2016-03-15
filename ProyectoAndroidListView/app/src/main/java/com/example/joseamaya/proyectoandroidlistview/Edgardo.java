@@ -48,7 +48,7 @@ public class Edgardo extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try{
                             JSONArray usuarios=response.getJSONArray("usuarios");
-                            JSONObject edgardo=usuarios.getJSONObject(0);
+                            JSONObject edgardo=usuarios.getJSONObject(2);
 
                             TextView nombres=(TextView)findViewById(R.id.textViewEdgardoNombres);
                             nombres.setText(edgardo.getString("nombre").toString());
