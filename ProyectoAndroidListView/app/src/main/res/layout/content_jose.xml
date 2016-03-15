@@ -11,7 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joseamaya.proyectoandroidlistview.Jose"
     tools:showIn="@layout/activity_jose"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -101,5 +102,35 @@
             android:text="Mensaje"
             android:id="@+id/buttonJoseSms"
             android:onClick="onClickJoseMensaje" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whatsapp"
+            android:id="@+id/buttonJoseWhatsapp"
+            android:onClick="onClickJoseWhatsapp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telegram"
+            android:id="@+id/buttonJoseTelegram"
+            android:onClick="onClickJoseTelegram" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook"
+            android:id="@+id/buttonJoseFacebook"
+            android:onClick="onClickJoseFacebook" />
+
+
     </LinearLayout>
 </LinearLayout>

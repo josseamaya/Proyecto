@@ -2,16 +2,17 @@ package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.location.GpsStatus;
 import android.net.Uri;
+=======
+>>>>>>> origin/master
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 cont = position;
                 if (position == 0) // carlos
                 {
+                    Intent intent=new Intent(mContext,carlos.class);
+                    startActivity(intent);
 
                 }
                 if (position == 1)//daniel
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (position == 2)//edgardo
                 {
-
+                    Intent intent=new Intent(mContext,Edgardo.class);
+                    startActivity(intent);
                 }
                 if (position == 3)//jose
                 {
