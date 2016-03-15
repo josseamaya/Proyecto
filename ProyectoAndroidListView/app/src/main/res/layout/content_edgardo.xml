@@ -34,14 +34,17 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/textViewEdgardoNombres"
-                android:text="Nombres" />
+                android:text="Nombres"
+                android:textSize="24dp"
+                android:textIsSelectable="false" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/textViewEdgardoApellidos"
-                android:text="Apellidos" />
+                android:text="Apellidos"
+                android:textSize="18dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -131,25 +134,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LLAMAR"
-            android:id="@+id/buttonEdgardoLlamar" />
+            android:id="@+id/buttonEdgardoLlamar"
+            android:onClick="onClickLlamarEdgardo" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SMS"
-            android:id="@+id/buttonEdgardoSMS" />
+            android:id="@+id/buttonEdgardoSMS"
+            android:onClick="onClickSMSEdgardo" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Whatsapp"
-            android:id="@+id/buttonEdgardoWhatsapp" />
+            android:id="@+id/buttonEdgardoWhatsapp"
+            android:onClick="onClickWhatsappEdgardo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Facebook"
-            android:id="@+id/buttonEdgardoFacebook" />
+            android:id="@+id/buttonEdgardoFacebook"
+            android:onClick="onClickFacebookEdgardo" />
     </LinearLayout>
 
 </LinearLayout>
