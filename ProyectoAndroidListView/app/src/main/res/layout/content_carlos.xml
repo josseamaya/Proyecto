@@ -118,6 +118,7 @@
         android:id="@+id/buttonCarlosFaceBook"
         android:layout_alignBottom="@+id/buttonCarlosSMS"
         android:layout_alignParentEnd="true"
-        android:onClick="onClickFaceBookCarlos" />
+        android:onClick="onClickFaceBookCarlos"
+        android:background="#dc3838" />
 
 </RelativeLayout>
