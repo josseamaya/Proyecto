@@ -3,10 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_jose">Jose</string>
     <string name="title_activity_carlos">carlos</string>
-<<<<<<< HEAD
     <string name="title_activity_kevin">Kevin</string>
-=======
     <string name="title_activity_daniel">Daniel</string>
     <string name="title_activity_edgardo">Edgardo</string>
->>>>>>> origin/master
 </resources>
