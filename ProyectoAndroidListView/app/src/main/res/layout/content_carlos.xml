@@ -99,7 +99,7 @@
         android:textColor="#c91010"
         android:shadowColor="#ebd0d0"
         android:nestedScrollingEnabled="false"
-        android:background="#84dbe5"
+        android:background="#e6a258"
         style="@android:style/Animation.Toast" />
 
     <Button
@@ -109,7 +109,8 @@
         android:id="@+id/buttonCarlosSMS"
         android:layout_alignTop="@+id/buttonCarlosLlamar"
         android:layout_centerHorizontal="true"
-        android:onClick="onClickSMSCarlos" />
+        android:onClick="onClickSMSCarlos"
+        android:background="#20d729" />
 
     <Button
         android:layout_width="wrap_content"
@@ -119,6 +120,6 @@
         android:layout_alignBottom="@+id/buttonCarlosSMS"
         android:layout_alignParentEnd="true"
         android:onClick="onClickFaceBookCarlos"
-        android:background="#dc3838" />
+        android:background="#388adc" />
 
 </RelativeLayout>
