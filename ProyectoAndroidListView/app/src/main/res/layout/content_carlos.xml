@@ -10,13 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joseamaya.proyectoandroidlistview.carlos"
-    tools:showIn="@layout/activity_carlos">
+    tools:showIn="@layout/activity_carlos"
+    android:background="@mipmap/fondo02">
 
     <com.android.volley.toolbox.NetworkImageView
         android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:id="@+id/imageViewCarlos"
-        android:background="#e6dfdf" />
+        android:background="#dbe6e5"
+        android:foreground="#cbd1cf" />
 
     <TextView
         android:layout_width="match_parent"
@@ -26,7 +28,7 @@
         android:id="@+id/textViewCarlosNombres"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/imageViewCarlos"
-        android:textColor="#1635ce"
+        android:textColor="#f1faf9"
         android:textSize="35dp"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -41,7 +43,7 @@
         android:layout_toEndOf="@+id/imageViewCarlos"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="#1829e1"
+        android:textColor="#f1faf9"
         android:textAlignment="center" />
 
     <TextView
@@ -51,10 +53,11 @@
         android:text="Large Text"
         android:id="@+id/textViewCarlosTelefono"
         android:textAlignment="textEnd"
-        android:layout_below="@+id/textViewCarlosApellidos"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="70dp"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:textColor="#f1faf9"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/imageViewCarlos"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,9 +66,12 @@
         android:text="Large Text"
         android:id="@+id/textViewCarlosCorreo"
         android:textAlignment="textEnd"
-        android:layout_below="@+id/textViewCarlosTelefono"
-        android:layout_alignEnd="@+id/textViewCarlosTelefono"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:textColor="#f2fbfa"
+        android:textStyle="bold"
+        android:background="#040303"
+        android:layout_above="@+id/textViewCarlosTelefono"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,9 +80,11 @@
         android:text="Large Text"
         android:id="@+id/textViewCarlosFacebook"
         android:textAlignment="textEnd"
-        android:layout_below="@+id/textViewCarlosCorreo"
-        android:layout_alignEnd="@+id/textViewCarlosDesrcripcion"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:textColor="#f1faf9"
+        android:textStyle="bold"
+        android:layout_above="@+id/textViewCarlosCorreo"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -85,48 +93,90 @@
         android:text="Large Text"
         android:id="@+id/textViewCarlosDesrcripcion"
         android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="#f2f9f8"
+        android:textStyle="bold"
         android:layout_below="@+id/imageViewCarlos"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp" />
+        android:layout_alignEnd="@+id/textViewCarlosApellidos"
+        android:layout_marginTop="43dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Llamar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/buttonCarlosLlamar"
         android:onClick="onClickLlamarCarlos"
         android:textStyle="bold"
         android:theme="@android:style/Animation"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="57dp"
         android:textColor="#c91010"
         android:shadowColor="#ebd0d0"
         android:nestedScrollingEnabled="false"
-        android:background="#e6a258"
+        android:background="@mipmap/llamar"
         style="@android:style/Animation.Toast"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SMS"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/buttonCarlosSMS"
-        android:layout_alignTop="@+id/buttonCarlosLlamar"
-        android:layout_centerHorizontal="true"
         android:onClick="onClickSMSCarlos"
-        android:background="#20d729"
-        android:textSize="20dp" />
+        android:background="@mipmap/sms"
+        android:textSize="20dp"
+        android:textAlignment="viewEnd"
+        android:layout_alignTop="@+id/buttonCarlosLlamar"
+        android:layout_centerHorizontal="true" />
 
     <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonCarlosFaceBook"
+        android:onClick="onClickFaceBookCarlos"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/buttonCarlosSMS"
+        android:layout_alignParentEnd="true"
+        android:background="@mipmap/logof" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FaceBook"
-        android:id="@+id/buttonCarlosFaceBook"
-        android:layout_alignBottom="@+id/buttonCarlosSMS"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClickFaceBookCarlos"
-        android:background="#388adc"
-        android:textSize="20dp" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="SMS"
+        android:id="@+id/textView2"
+        android:background="#0c0c0c"
+        android:textSize="20dp"
+        android:textColor="#1de1ce"
+        android:layout_above="@+id/buttonCarlosSMS"
+        android:layout_alignStart="@+id/buttonCarlosSMS"
+        android:layout_alignEnd="@+id/buttonCarlosSMS"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Face"
+        android:id="@+id/textView3"
+        android:background="#0c0c0c"
+        android:textSize="20dp"
+        android:textColor="#1de1ce"
+        android:layout_alignEnd="@+id/textViewCarlosApellidos"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignStart="@+id/buttonCarlosFaceBook"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Call"
+        android:id="@+id/textView"
+        android:background="#0c0c0c"
+        android:textSize="20dp"
+        android:textColor="#1de1ce"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/buttonCarlosLlamar"
+        android:textAlignment="center" />
 
 </RelativeLayout>
