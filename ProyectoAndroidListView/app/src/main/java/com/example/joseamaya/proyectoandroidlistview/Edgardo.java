@@ -1,11 +1,14 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -22,6 +25,7 @@ import org.json.JSONObject;
 
 public class Edgardo extends AppCompatActivity {
     String LlamarEdgardoTelefono = "";
+    String EdgardoFacebook="";
     private static Context mContext;
 
     @Override
@@ -50,6 +54,7 @@ public class Edgardo extends AppCompatActivity {
                             JSONArray usuarios=response.getJSONArray("usuarios");
                             JSONObject edgardo=usuarios.getJSONObject(2);
 
+
                             TextView nombres=(TextView)findViewById(R.id.textViewEdgardoNombres);
                             nombres.setText(edgardo.getString("nombre").toString());
 
@@ -72,6 +77,10 @@ public class Edgardo extends AppCompatActivity {
                             String image=edgardo.getString("imagen");
                             FotoEdgardo.setImageUrl("http://imgur.com/"+image+".jpg",MySingleton.getInstance(MainActivity.mContext).getImageLoader());
 
+                            LlamarEdgardoTelefono=edgardo.getString("telefono");
+                            EdgardoFacebook=edgardo.getString("facebook");
+
+
                         }catch (JSONException e){
                             e.printStackTrace();
                         }
@@ -89,17 +98,15 @@ public class Edgardo extends AppCompatActivity {
         MySingleton.getInstance(this).addToRequestQueue(responseEdgardo);
     }
 
-   /* public void onClickEdgardoLlamar(View v){
-
-
-        Intent callIntent=new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse(LlamarEdgardoTelefono));
-        //if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE))!= PackageManager.PERMISSION_GRANTED{
+   public void onClickLlamarEdgardo(View v){
+       Intent IntentLamar=new Intent(Intent.ACTION_CALL);
+       IntentLamar.setData(Uri.parse(LlamarEdgardoTelefono));
+       if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             return;
         }
-        startActivity(callIntent);
+        startActivity(IntentLamar);
 
-    }*/
+    }
 
     public void onClickSMSEdgardo (View v){
         Intent IntentSMS= new Intent(Intent.ACTION_VIEW);
@@ -121,7 +128,7 @@ public class Edgardo extends AppCompatActivity {
     }
 
     public void onClickFacebookEdgardo(View v){
-        String linkFacebook="https://www.facebook.com/edgardo.e.espana";
+        String linkFacebook=EdgardoFacebook;
         Intent intentFacebook=null;
         intentFacebook=new Intent(intentFacebook.ACTION_VIEW,Uri.parse(linkFacebook));
         startActivity(intentFacebook);
