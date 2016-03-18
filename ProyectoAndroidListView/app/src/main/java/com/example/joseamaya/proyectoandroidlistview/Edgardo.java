@@ -119,5 +119,13 @@ public class Edgardo extends AppCompatActivity {
         startActivity(Whatsapp);
 
     }
+
+    public void onClickFacebookEdgardo(View v){
+        String linkFacebook="https://www.facebook.com/edgardo.e.espana";
+        Intent intentFacebook=null;
+        intentFacebook=new Intent(intentFacebook.ACTION_VIEW,Uri.parse(linkFacebook));
+        startActivity(intentFacebook);
+
+    }
 }
 
