@@ -19,9 +19,52 @@
 
     <com.android.volley.toolbox.NetworkImageView
         android:layout_width="match_parent"
-        android:layout_height="227dp"
+        android:layout_height="201dp"
         android:id="@+id/networkImageViewDaniel"
-        android:elevation="10dp" />
+        android:elevation="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="37dp"
+            android:text="Llamar"
+            android:id="@+id/buttonDanielLlamar"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:layout_marginRight="10dp"
+            android:elevation="2dp" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="37dp"
+            android:text="Facebook"
+            android:id="@+id/buttonDanielFacebook"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:elevation="2dp" />
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="37dp"
+            android:text="Whatsapp"
+            android:id="@+id/buttonDanielWhatsapp"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:elevation="2dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -60,7 +103,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/textViewDanielTelefono"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:textColor="#bfbfbf" />
 
         <TextView
