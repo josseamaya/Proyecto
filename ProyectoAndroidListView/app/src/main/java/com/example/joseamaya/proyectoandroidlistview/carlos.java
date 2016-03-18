@@ -93,6 +93,13 @@ public class carlos extends AppCompatActivity {
 
     }
 
+    public void onClickFaceBookCarlos( View view) throws Exception 	{
+        String link = "https://www.facebook.com/carlosalfredo.banegasmejia";
+        Intent intent = null;
+        intent = new Intent(intent.ACTION_VIEW,Uri.parse(link));
+        startActivity(intent);
+    }
+
     public void enviaSMS(int tel) {
         Uri uri = Uri.parse("smsto:" + tel);
         Intent it = new Intent(Intent.ACTION_SENDTO, uri);

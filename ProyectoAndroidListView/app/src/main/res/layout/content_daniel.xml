@@ -12,63 +12,127 @@
     tools:context="com.example.joseamaya.proyectoandroidlistview.Daniel"
     tools:showIn="@layout/activity_daniel"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:backgroundTint="#107186"
+    android:background="#1d84c8"
+    android:backgroundTintMode="src_over">
 
     <com.android.volley.toolbox.NetworkImageView
         android:layout_width="match_parent"
-        android:layout_height="244dp"
-        android:id="@+id/view" />
+        android:layout_height="201dp"
+        android:id="@+id/networkImageViewDaniel"
+        android:elevation="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="37dp"
+            android:text="Llamar"
+            android:id="@+id/buttonDanielLlamar"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:layout_marginRight="10dp"
+            android:elevation="2dp"
+            android:onClick="onClickLlamarDaniel" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="37dp"
+            android:text="Facebook"
+            android:id="@+id/buttonDanielFacebook"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:elevation="2dp"
+            android:onClick="onClickFaceBookDaniel" />
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="37dp"
+            android:text="Whatsapp"
+            android:id="@+id/buttonDanielWhatsapp"
+            android:textColor="#ffffff"
+            android:background="#1c97b3"
+            android:layout_weight="0.31"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:elevation="2dp"
+            android:onClick="onClickDanielWhatsapp" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView" />
+            android:id="@+id/textViewDanielNombre"
+            android:elevation="0dp"
+            android:textSize="30dp"
+            android:textIsSelectable="false"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView3"
-            android:layout_marginTop="-26dp"
-            android:layout_marginLeft="180dp" />
+            android:id="@+id/textViewDanielApellido"
+            android:layout_marginTop="-35dp"
+            android:layout_marginLeft="180dp"
+            android:elevation="0dp"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:textIsSelectable="false"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView4"
-            android:layout_marginTop="30dp" />
+            android:id="@+id/textViewDanielTelefono"
+            android:layout_marginTop="15dp"
+            android:textColor="#bfbfbf" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView2" />
+            android:id="@+id/textViewDanielCorreo"
+            android:textColor="#bfbfbf" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView5" />
+            android:id="@+id/textViewDanielFacebook"
+            android:textColor="#bfbfbf" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView6"
-            android:layout_marginTop="15dp" />
+            android:id="@+id/textViewDanielDescripcion"
+            android:layout_marginTop="15dp"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </LinearLayout>

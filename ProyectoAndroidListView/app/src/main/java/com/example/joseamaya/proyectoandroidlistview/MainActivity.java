@@ -2,10 +2,14 @@ package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 
 import android.location.GpsStatus;
 import android.net.Uri;
 
+=======
+import android.net.Uri;
+>>>>>>> origin/master
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;

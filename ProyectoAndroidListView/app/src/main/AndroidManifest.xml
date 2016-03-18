@@ -32,16 +32,13 @@
             android:label="@string/title_activity_jose"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-<<<<<<< HEAD
+
             android:name=".Kevin"
             android:label="@string/title_activity_kevin"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-=======
             android:name=".Daniel"
             android:label="@string/title_activity_daniel"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -49,7 +46,7 @@
             android:name=".Edgardo"
             android:label="@string/title_activity_edgardo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
->>>>>>> origin/master
+
     </application>
 
 </manifest>
