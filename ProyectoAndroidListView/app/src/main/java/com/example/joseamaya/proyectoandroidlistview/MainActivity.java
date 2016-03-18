@@ -2,15 +2,13 @@ package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
 import android.content.Intent;
-import android.location.GpsStatus;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,6 +16,9 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +28,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static Context mContext;
-    Integer cont=0;
+    Integer cont = 0;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,35 +43,39 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mContext=this;
-        String url="https://api.myjson.com/bins/4flfz";
+        mContext = this;
+        String url = "https://api.myjson.com/bins/4flfz";
         getUsuarios(url);
 
-        ListView lv2=(ListView) findViewById(R.id.listViewUsuarios);
+        ListView lv2 = (ListView) findViewById(R.id.listViewUsuarios);
         lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 cont = position;
-                if (position==0) // carlos
+                if (position == 0) // carlos
+                {
+                    Intent intent=new Intent(mContext,carlos.class);
+                    startActivity(intent);
+
+                }
+                if (position == 1)//daniel
                 {
 
                 }
-                if (position==1)//daniel
+                if (position == 2)//edgardo
                 {
-
-                }
-                if (position==2)//edgardo
-                {
-
-                }
-                if (position==3)//jose
-                {
-                    Intent intent=new Intent (mContext,Jose.class);
+                    Intent intent=new Intent(mContext,Edgardo.class);
                     startActivity(intent);
                 }
-                if (position==4)//kevin
+                if (position == 3)//jose
                 {
-
+                    Intent intent = new Intent(mContext, Jose.class);
+                    startActivity(intent);
+                }
+                if (position == 4)//kevin
+                {
+                    Intent kavxIntent = new Intent(mContext, Kevin.class);
+                    startActivity(kavxIntent);
                 }
 
 
@@ -73,11 +83,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-    public void getUsuarios (String url){
-        final Context context=this;
 
-        JsonObjectRequest jor= new JsonObjectRequest(
+    public void getUsuarios(String url) {
+        final Context context = this;
+
+        JsonObjectRequest jor = new JsonObjectRequest(
                 url,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -88,11 +102,11 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < usuarios.length(); i++) {
                                 dataSourse.add(usuarios.getJSONObject(i));
                             }
-                            TextView tvprueba=(TextView)findViewById(R.id.textViewPrueba);
+                            TextView tvprueba = (TextView) findViewById(R.id.textViewPrueba);
                             tvprueba.setText(usuarios.toString());
 
                             CeldaComplejaAdapter adapter = new CeldaComplejaAdapter(context, 0, dataSourse);
-                           ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
+                            ((ListView) findViewById(R.id.listViewUsuarios)).setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -133,5 +147,45 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.joseamaya.proyectoandroidlistview/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.joseamaya.proyectoandroidlistview/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 }
