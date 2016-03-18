@@ -23,8 +23,11 @@ import org.json.JSONObject;
 
 
 public class Jose extends AppCompatActivity {
-    String josellamarTelefono = "";
+
     private static Context mContext;
+    String telefonoJose = "";
+    String facebookJose="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,8 @@ public class Jose extends AppCompatActivity {
                             String joseCorreo = perfil.getString("email");
                             String imagen = perfil.getString("imagen");
 
-                            josellamarTelefono = joseTelefono;
+                            telefonoJose = joseTelefono;
+                            facebookJose=perfil.getString("facebook");
 
 
                             TextView tvJoseNombre = (TextView) findViewById(R.id.textViewJoseNombre);
@@ -106,7 +110,7 @@ public class Jose extends AppCompatActivity {
     public void onClickJoseLlamar(View v) {
         //startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", josellamarTelefono, null)));
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse(josellamarTelefono));
+        callIntent.setData(Uri.parse(telefonoJose));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -123,25 +127,24 @@ public class Jose extends AppCompatActivity {
     public void onClickJoseMensaje (View v){
         Intent smsIntent = new Intent(Intent.ACTION_VIEW);
         smsIntent.setType("vnd.android-dir/mms-sms");
-        smsIntent.putExtra("address", josellamarTelefono);
+        smsIntent.putExtra("address", telefonoJose);
         smsIntent.putExtra("sms_body", "");
         startActivity(smsIntent);
     }
     public void onClickJoseWhatsapp (View v)
     {
-        Uri uri = Uri.parse("smsto:" + 32556369);
+        Uri uri = Uri.parse("smsto:" + telefonoJose);
         Intent i = new Intent(Intent.ACTION_SENDTO, uri);
         i.putExtra("sms_body", "");
         i.setPackage("com.whatsapp");
         startActivity(i);
     }
-    public void onClickJoseTelegram (View v)
-    {
-
-    }
     public void onClickJoseFacebook(View v)
     {
-
+        String link = facebookJose;
+        Intent intent = null;
+        intent = new Intent(intent.ACTION_VIEW,Uri.parse(link));
+        startActivity(intent);
     }
 
 
