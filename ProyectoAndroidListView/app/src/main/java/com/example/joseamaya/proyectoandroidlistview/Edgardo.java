@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 public class Edgardo extends AppCompatActivity {
     String LlamarEdgardoTelefono = "";
-    String EdgardoFacebook="";
+
     private static Context mContext;
 
     @Override
@@ -78,7 +78,7 @@ public class Edgardo extends AppCompatActivity {
                             FotoEdgardo.setImageUrl("http://imgur.com/"+image+".jpg",MySingleton.getInstance(MainActivity.mContext).getImageLoader());
 
                             LlamarEdgardoTelefono=edgardo.getString("telefono");
-                            EdgardoFacebook=edgardo.getString("facebook");
+
 
 
                         }catch (JSONException e){
@@ -128,7 +128,7 @@ public class Edgardo extends AppCompatActivity {
     }
 
     public void onClickFacebookEdgardo(View v){
-        String linkFacebook=EdgardoFacebook;
+        String linkFacebook="https://www.facebook.com/edgardo.e.espana";
         Intent intentFacebook=null;
         intentFacebook=new Intent(intentFacebook.ACTION_VIEW,Uri.parse(linkFacebook));
         startActivity(intentFacebook);
