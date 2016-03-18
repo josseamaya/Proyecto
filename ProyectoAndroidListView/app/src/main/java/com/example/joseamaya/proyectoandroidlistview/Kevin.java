@@ -91,18 +91,25 @@ public class Kevin extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public void onClickOpenFace(View v1) throws Exception 	{
-        String enlace = "https://www.facebook.com/kavx1001";
+    public void onClickFaceKevin(View v1) throws Exception 	{
+
+        TextView face = (TextView) findViewById(R.id.txtFace);
+
+        String enlace = face.getText().toString();
         Intent intent = null;
         intent = new Intent(intent.ACTION_VIEW,Uri.parse(enlace));
         startActivity(intent);
     }
 
-    public void enviaSMS(int tel) {
-        Uri uri = Uri.parse("smsto:" + tel);
-        Intent it = new Intent(Intent.ACTION_SENDTO, uri);
-        it.putExtra("sms_body","");
-        startActivity(it);
+    public void onclickSmsKevin (View face) {
+
+        TextView numTelefono=(TextView)findViewById(R.id.txtTel);
+        String numTel=numTelefono.getText().toString();
+        Uri uri = Uri.parse("smsto:" + numTel);
+        Intent enviaSms = new Intent(Intent.ACTION_SENDTO, uri);
+        enviaSms.putExtra("sms_body","");
+        startActivity(enviaSms);
+
     }
 
     @Override

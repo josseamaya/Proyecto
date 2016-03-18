@@ -135,7 +135,8 @@
                 android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
                 android:background="@mipmap/facebook"
                 android:textStyle="bold|italic"
-                android:layout_marginLeft="30dp" />
+                android:layout_marginLeft="30dp"
+                android:onClick="onClickFaceKevin" />
 
             <Button
                 style="@style/Theme.AppCompat.Light.DarkActionBar"
@@ -147,7 +148,8 @@
                 android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
                 android:background="@mipmap/sms"
                 android:textStyle="bold|italic"
-                android:layout_marginLeft="30dp" />
+                android:layout_marginLeft="30dp"
+                android:onClick="onclickSmsKevin" />
         </LinearLayout>
     </LinearLayout>
 
