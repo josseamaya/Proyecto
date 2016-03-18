@@ -84,16 +84,16 @@
             android:text="Facebook"
             android:id="@+id/txtFace"
             android:textColor="#d3ddf8"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:layout_width="236dp"
+            android:layout_width="267dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Descripcion"
             android:id="@+id/txtDescripcion"
             android:textColor="#d3ddf8"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_weight="0.26"
             style="@style/Base.TextAppearance.AppCompat.Title.Inverse" />
@@ -105,25 +105,47 @@
             android:layout_marginTop="35dp">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="Llamar"
+                android:layout_width="55dp"
+                android:layout_height="66dp"
                 android:id="@+id/btnLlamar"
                 style="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:textStyle="bold|italic"
-                android:background="#40e10f"
+                android:background="@mipmap/call"
                 android:layout_marginLeft="25dp" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:text="WhatsApp"
+                android:layout_width="55dp"
+                android:layout_height="66dp"
                 android:id="@+id/btnWp"
                 style="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:contextClickable="true"
                 android:theme="@style/Base.Widget.AppCompat.ImageButton"
                 android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
-                android:background="#7cee88"
+                android:background="@mipmap/whatsapp"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="30dp" />
+
+            <Button
+                style="@style/Theme.AppCompat.Light.DarkActionBar"
+                android:layout_width="55dp"
+                android:layout_height="66dp"
+                android:id="@+id/txtFace"
+                android:contextClickable="true"
+                android:theme="@style/Base.Widget.AppCompat.ImageButton"
+                android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
+                android:background="@mipmap/facebook"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="30dp" />
+
+            <Button
+                style="@style/Theme.AppCompat.Light.DarkActionBar"
+                android:layout_width="55dp"
+                android:layout_height="66dp"
+                android:id="@+id/btnSms"
+                android:contextClickable="true"
+                android:theme="@style/Base.Widget.AppCompat.ImageButton"
+                android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
+                android:background="@mipmap/sms"
                 android:textStyle="bold|italic"
                 android:layout_marginLeft="30dp" />
         </LinearLayout>

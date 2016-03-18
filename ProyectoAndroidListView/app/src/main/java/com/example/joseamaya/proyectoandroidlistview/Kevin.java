@@ -1,6 +1,7 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
@@ -79,9 +80,29 @@ public class Kevin extends AppCompatActivity {
                 }
 
         );
+
+        MySingleton.getInstance(this).addToRequestQueue(myResponse);
+
+
+
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    public void onClickOpenFace(View v1) throws Exception 	{
+        String enlace = "https://www.facebook.com/kavx1001";
+        Intent intent = null;
+        intent = new Intent(intent.ACTION_VIEW,Uri.parse(enlace));
+        startActivity(intent);
+    }
+
+    public void enviaSMS(int tel) {
+        Uri uri = Uri.parse("smsto:" + tel);
+        Intent it = new Intent(Intent.ACTION_SENDTO, uri);
+        it.putExtra("sms_body","");
+        startActivity(it);
     }
 
     @Override
