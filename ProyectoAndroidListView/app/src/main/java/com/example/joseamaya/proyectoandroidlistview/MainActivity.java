@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (position == 1)//daniel
                 {
-
+                    Intent intent=new Intent(mContext,Daniel.class);
+                    startActivity(intent);
                 }
                 if (position == 2)//edgardo
                 {
