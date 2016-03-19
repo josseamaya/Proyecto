@@ -121,7 +121,7 @@
         android:layout_height="50dp"
         android:id="@+id/buttonCarlosSMS"
         android:onClick="onClickSMSCarlos"
-        android:background="@mipmap/sms"
+        android:background="@mipmap/sms01"
         android:textSize="20dp"
         android:textAlignment="viewEnd"
         android:layout_alignTop="@+id/buttonCarlosLlamar"
