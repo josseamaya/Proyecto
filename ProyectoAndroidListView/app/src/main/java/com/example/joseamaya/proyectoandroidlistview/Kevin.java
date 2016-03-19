@@ -91,6 +91,15 @@ public class Kevin extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
+   public String getKevinTel (){
+
+       TextView tel = (TextView) findViewById(R.id.txtTel);
+
+        String num = tel.getText().toString();
+
+       return num;
+   }
+
     public void onClickFaceKevin(View v1) throws Exception 	{
 
         TextView face = (TextView) findViewById(R.id.txtFace);
@@ -101,16 +110,26 @@ public class Kevin extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onclickSmsKevin (View face) {
+    public void onclickSmsKevin (View sms) {
 
-        TextView numTelefono=(TextView)findViewById(R.id.txtTel);
-        String numTel=numTelefono.getText().toString();
-        Uri uri = Uri.parse("smsto:" + numTel);
+        Uri uri = Uri.parse("smsto:" + getKevinTel());
         Intent enviaSms = new Intent(Intent.ACTION_SENDTO, uri);
         enviaSms.putExtra("sms_body","");
         startActivity(enviaSms);
 
     }
+
+    public void onClickWatsAppKevin (View v)
+    {
+        TextView numTelefono=(TextView)findViewById(R.id.txtTel);
+        String numTel=numTelefono.getText().toString();
+        Uri uri = Uri.parse("smsto:" + numTel);
+        Intent wp = new Intent(Intent.ACTION_SENDTO, uri);
+        wp.putExtra("sms_body", "");
+        wp.setPackage("com.whatsapp");
+        startActivity(wp);
+    }
+
 
     @Override
     public void onStart() {

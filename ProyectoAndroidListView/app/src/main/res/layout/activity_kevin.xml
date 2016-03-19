@@ -123,7 +123,8 @@
                 android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
                 android:background="@mipmap/whatsapp"
                 android:textStyle="bold|italic"
-                android:layout_marginLeft="30dp" />
+                android:layout_marginLeft="30dp"
+                android:onClick="onClickWatsAppKevin" />
 
             <Button
                 style="@style/Theme.AppCompat.Light.DarkActionBar"
