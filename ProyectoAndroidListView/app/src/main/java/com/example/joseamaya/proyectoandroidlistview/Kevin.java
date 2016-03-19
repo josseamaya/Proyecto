@@ -1,12 +1,15 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -121,13 +124,23 @@ public class Kevin extends AppCompatActivity {
 
     public void onClickWatsAppKevin (View v)
     {
-        TextView numTelefono=(TextView)findViewById(R.id.txtTel);
-        String numTel=numTelefono.getText().toString();
-        Uri uri = Uri.parse("smsto:" + numTel);
+        Uri uri = Uri.parse("smsto:" + getKevinTel());
         Intent wp = new Intent(Intent.ACTION_SENDTO, uri);
         wp.putExtra("sms_body", "");
         wp.setPackage("com.whatsapp");
         startActivity(wp);
+    }
+
+    public void onClickLlamarKevin(View v) {
+
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse(getKevinTel()));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        startActivity(callIntent);
+
     }
 
 

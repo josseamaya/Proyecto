@@ -111,7 +111,8 @@
                 style="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:textStyle="bold|italic"
                 android:background="@mipmap/call"
-                android:layout_marginLeft="25dp" />
+                android:layout_marginLeft="25dp"
+                android:onClick="onClickLlamarKevin" />
 
             <Button
                 android:layout_width="55dp"
