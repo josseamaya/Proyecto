@@ -37,7 +37,7 @@ public class Jose extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        String url = "https://api.myjson.com/bins/4flfz";
+        String url = "https://api.myjson.com/bins/xhuz";
         mContext=this;
         getUsuarios(url);
 

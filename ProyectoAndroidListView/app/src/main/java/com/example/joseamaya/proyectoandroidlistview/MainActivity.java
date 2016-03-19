@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mContext = this;
-        String url = "https://api.myjson.com/bins/4flfz";
+        String url = "https://api.myjson.com/bins/xhuz";
         getUsuarios(url);
 
         ListView lv2 = (ListView) findViewById(R.id.listViewUsuarios);

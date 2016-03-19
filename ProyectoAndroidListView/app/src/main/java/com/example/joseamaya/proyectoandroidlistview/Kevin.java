@@ -44,8 +44,19 @@ public class Kevin extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+<<<<<<< HEAD
         String urlJson = "https://api.myjson.com/bins/4flfz";
 
+=======
+        String urlJson = "https://api.myjson.com/bins/xhuz";
+        TextView nombre = (TextView) findViewById(R.id.txtNombre);
+        TextView apellido = (TextView) findViewById(R.id.txtApellido);
+        TextView tel = (TextView) findViewById(R.id.txtTel);
+        TextView correo = (TextView) findViewById(R.id.txtCorreo);
+        TextView face = (TextView) findViewById(R.id.txtFace);
+        TextView descripcion = (TextView) findViewById(R.id.txtDescripcion);
+        NetworkImageView myPic = (NetworkImageView) findViewById(R.id.NetImage);
+>>>>>>> origin/master
 
         JsonObjectRequest myResponse = new JsonObjectRequest(
                 urlJson,
