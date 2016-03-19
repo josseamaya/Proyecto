@@ -45,7 +45,7 @@ public class Kevin extends AppCompatActivity {
 
         final Context myContext = this;
 
-        String urlJson = "https://api.myjson.com/bins/4flfz";
+        String urlJson = "https://api.myjson.com/bins/xhuz";
         TextView nombre = (TextView) findViewById(R.id.txtNombre);
         TextView apellido = (TextView) findViewById(R.id.txtApellido);
         TextView tel = (TextView) findViewById(R.id.txtTel);

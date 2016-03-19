@@ -44,7 +44,7 @@ public class Edgardo extends AppCompatActivity {
             }
         });
 
-        String url="https://api.myjson.com/bins/4flfz";
+        String url="https://api.myjson.com/bins/xhuz";
 
         JsonObjectRequest responseEdgardo=new JsonObjectRequest(url,
                 new Response.Listener< JSONObject>() {
