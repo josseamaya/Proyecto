@@ -120,13 +120,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Telegram"
-            android:id="@+id/buttonJoseTelegram"
-            android:onClick="onClickJoseTelegram" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Facebook"
             android:id="@+id/buttonJoseFacebook"
             android:onClick="onClickJoseFacebook" />

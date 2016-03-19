@@ -148,7 +148,11 @@
                 android:contextClickable="true"
                 android:theme="@style/Base.Widget.AppCompat.ImageButton"
                 android:translationZ="@dimen/abc_action_bar_subtitle_top_margin_material"
+<<<<<<< HEAD
                 android:background="@mipmap/smskavx"
+=======
+                android:background="@mipmap/sms01"
+>>>>>>> origin/master
                 android:textStyle="bold|italic"
                 android:layout_marginLeft="30dp"
                 android:onClick="onclickSmsKevin" />
