@@ -39,7 +39,8 @@
             android:background="#1c97b3"
             android:layout_weight="0.31"
             android:layout_marginRight="10dp"
-            android:elevation="2dp" />
+            android:elevation="2dp"
+            android:onClick="onClickLlamarDaniel" />
 
         <Button
             android:layout_width="60dp"
@@ -51,7 +52,8 @@
             android:textColor="#ffffff"
             android:background="#1c97b3"
             android:layout_weight="0.31"
-            android:elevation="2dp" />
+            android:elevation="2dp"
+            android:onClick="onClickFaceBookDaniel" />
 
         <Button
             android:layout_width="61dp"
@@ -63,7 +65,8 @@
             android:layout_weight="0.31"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="0dp"
-            android:elevation="2dp" />
+            android:elevation="2dp"
+            android:onClick="onClickDanielWhatsapp" />
     </LinearLayout>
 
     <LinearLayout

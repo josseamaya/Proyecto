@@ -29,7 +29,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".carlos"
-            android:label="@string/title_activity_jose"
+            android:label="Carlos Alfreodo Banegas Mejia"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
 
