@@ -1,11 +1,15 @@
 package com.example.joseamaya.proyectoandroidlistview;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -79,10 +83,66 @@ public class Kevin extends AppCompatActivity {
                 }
 
         );
+
+        MySingleton.getInstance(this).addToRequestQueue(myResponse);
+
+
+
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+   public String getKevinTel (){
+
+       TextView tel = (TextView) findViewById(R.id.txtTel);
+
+        String num = tel.getText().toString();
+
+       return num;
+   }
+
+    public void onClickFaceKevin(View v1) throws Exception 	{
+
+        TextView face = (TextView) findViewById(R.id.txtFace);
+
+        String enlace = face.getText().toString();
+        Intent intent = null;
+        intent = new Intent(intent.ACTION_VIEW,Uri.parse(enlace));
+        startActivity(intent);
+    }
+
+    public void onclickSmsKevin (View sms) {
+
+        Uri uri = Uri.parse("smsto:" + getKevinTel());
+        Intent enviaSms = new Intent(Intent.ACTION_SENDTO, uri);
+        enviaSms.putExtra("sms_body","");
+        startActivity(enviaSms);
+
+    }
+
+    public void onClickWatsAppKevin (View v)
+    {
+        Uri uri = Uri.parse("smsto:" + getKevinTel());
+        Intent wp = new Intent(Intent.ACTION_SENDTO, uri);
+        wp.putExtra("sms_body", "");
+        wp.setPackage("com.whatsapp");
+        startActivity(wp);
+    }
+
+    public void onClickLlamarKevin(View v) {
+
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse(getKevinTel()));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        startActivity(callIntent);
+
+    }
+
 
     @Override
     public void onStart() {

@@ -2,6 +2,9 @@ package com.example.joseamaya.proyectoandroidlistview;
 
 import android.content.Context;
 import android.content.Intent;
+
+import android.location.GpsStatus;
+import android.net.Uri;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -60,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (position == 1)//daniel
                 {
-
+                    Intent intent=new Intent(mContext,Daniel.class);
+                    startActivity(intent);
                 }
                 if (position == 2)//edgardo
                 {

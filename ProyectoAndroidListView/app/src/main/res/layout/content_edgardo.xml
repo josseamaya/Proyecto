@@ -11,7 +11,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joseamaya.proyectoandroidlistview.edgardo"
     tools:showIn="@layout/activity_edgardo"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#e0f2f1">
 
 
     <LinearLayout
@@ -36,7 +38,8 @@
                 android:id="@+id/textViewEdgardoNombres"
                 android:text="Nombres"
                 android:textSize="24dp"
-                android:textIsSelectable="false" />
+                android:textIsSelectable="false"
+                android:textColor="#304ffe" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +47,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/textViewEdgardoApellidos"
                 android:text="Apellidos"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:textColor="#76ff03" />
         </LinearLayout>
 
     </LinearLayout>
@@ -52,14 +56,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Telefono:        "
-            android:id="@+id/textViewEtiquetaEdgardoTelefono" />
+            android:id="@+id/textViewEtiquetaEdgardoTelefono"
+            android:textColor="#304ffe" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,14 +77,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_weight="0.16">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Correo:            "
-            android:id="@+id/textViewEtiquetaEdgardoCorreo" />
+            android:id="@+id/textViewEtiquetaEdgardoCorreo"
+            android:textColor="#304ffe" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,14 +98,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_weight="0.18">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Facebook:       "
-            android:id="@+id/textViewEtiquetaEdgardoFacebook" />
+            android:id="@+id/textViewEtiquetaEdgardoFacebook"
+            android:textColor="#304ffe" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,14 +119,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_weight="0.16">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Descripcion:    "
-            android:id="@+id/textViewEtiquetaEdgardoDescripcion" />
+            android:id="@+id/textViewEtiquetaEdgardoDescripcion"
+            android:textColor="#304ffe" />
 
         <TextView
             android:layout_width="wrap_content"
