@@ -39,7 +39,8 @@
                 android:text="Nombres"
                 android:textSize="24dp"
                 android:textIsSelectable="false"
-                android:textColor="#304ffe" />
+                android:textColor="#304ffe"
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +49,8 @@
                 android:id="@+id/textViewEdgardoApellidos"
                 android:text="Apellidos"
                 android:textSize="18dp"
-                android:textColor="#76ff03" />
+                android:textColor="#304ffe"
+                android:textAlignment="center" />
         </LinearLayout>
 
     </LinearLayout>
