@@ -43,16 +43,9 @@ public class Kevin extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final Context myContext = this;
 
         String urlJson = "https://api.myjson.com/bins/4flfz";
-        TextView nombre = (TextView) findViewById(R.id.txtNombre);
-        TextView apellido = (TextView) findViewById(R.id.txtApellido);
-        TextView tel = (TextView) findViewById(R.id.txtTel);
-        TextView correo = (TextView) findViewById(R.id.txtCorreo);
-        TextView face = (TextView) findViewById(R.id.txtFace);
-        TextView descripcion = (TextView) findViewById(R.id.txtDescripcion);
-        NetworkImageView myPic = (NetworkImageView) findViewById(R.id.NetImage);
+
 
         JsonObjectRequest myResponse = new JsonObjectRequest(
                 urlJson,
@@ -62,9 +55,29 @@ public class Kevin extends AppCompatActivity {
                         try {
                             JSONArray usuarios = response.getJSONArray("usuarios");
                             JSONObject me = usuarios.getJSONObject(4);
-                            NetworkImageView myPic = (NetworkImageView) findViewById(R.id.NetImage);
+
+                            TextView nombre = (TextView) findViewById(R.id.txtNombre);
+                            TextView apellido = (TextView) findViewById(R.id.txtApellido);
+                            TextView tel = (TextView) findViewById(R.id.txtTel);
+                            TextView correo = (TextView) findViewById(R.id.txtCorreo);
+                            TextView face = (TextView) findViewById(R.id.txtFace);
+                            TextView descripcion = (TextView) findViewById(R.id.txtDescripcion);
+
+                            nombre.setText(me.getString("nombre").toString());
+
+                            apellido.setText(me.getString("apellido").toString());
+
+                            tel.setText(me.getString("telefono").toString());
+
+                            correo.setText(me.getString("email").toString());
+
+                            face.setText(me.getString("facebook").toString());
+
+                            descripcion.setText(me.getString("descripcion").toString());
+
+                            NetworkImageView netImageKavx = (NetworkImageView) findViewById(R.id.NetImage);
                             String imagenId = me.getString("imagen");
-                            myPic.setImageUrl("http://imgur.com/" +
+                            netImageKavx.setImageUrl("http://imgur.com/" +
                                             imagenId + ".jpg",
                                     MySingleton.getInstance(MainActivity.mContext).getImageLoader());
 
@@ -77,7 +90,7 @@ public class Kevin extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(myContext, "No se pudo realizar el Request!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.mContext, "No se pudo realizar el Request!", Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -94,7 +107,7 @@ public class Kevin extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-   public String getKevinTel (){
+   private String getKevinTel (){
 
        TextView tel = (TextView) findViewById(R.id.txtTel);
 
@@ -103,11 +116,13 @@ public class Kevin extends AppCompatActivity {
        return num;
    }
 
-    public void onClickFaceKevin(View v1) throws Exception 	{
+    public void onClickFaceKevin(View view) throws Exception 	{
 
-        TextView face = (TextView) findViewById(R.id.txtFace);
+ //       TextView face = (TextView) findViewById(R.id.txtFace);
 
-        String enlace = face.getText().toString();
+ //       String enlace = face.getText().toString();
+
+        String enlace = "https://www.facebook.com/kavx1001";
         Intent intent = null;
         intent = new Intent(intent.ACTION_VIEW,Uri.parse(enlace));
         startActivity(intent);
@@ -124,7 +139,7 @@ public class Kevin extends AppCompatActivity {
 
     public void onClickWatsAppKevin (View v)
     {
-        Uri uri = Uri.parse("smsto:" + getKevinTel());
+        Uri uri = Uri.parse("smsto:" + 98408763);
         Intent wp = new Intent(Intent.ACTION_SENDTO, uri);
         wp.putExtra("sms_body", "");
         wp.setPackage("com.whatsapp");
@@ -133,13 +148,14 @@ public class Kevin extends AppCompatActivity {
 
     public void onClickLlamarKevin(View v) {
 
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse(getKevinTel()));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-
-            return;
+        try {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getKevinTel())));
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        startActivity(callIntent);
 
     }
 
